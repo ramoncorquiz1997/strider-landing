@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'Strider Soporte <soporte@strider.lat>',
-        to: ['hola@strider.lat'],
+        to: ['ramoncorquiz12@gmail.com'],
         reply_to: email,
         subject: `[Soporte] ${name}`,
         text: `Nombre: ${name}\nCorreo: ${email}\n\n${message}`,
