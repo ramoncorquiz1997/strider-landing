@@ -28,6 +28,19 @@
       overflow-x: hidden;
     }
 
+    @media (prefers-color-scheme: light) {
+      html, body { background: #f5f4f0; color: #0d0d0d; }
+      h1 { color: #0d0d0d !important; text-shadow: none !important; }
+      p.sub { color: rgba(0,0,0,0.55) !important; text-shadow: none !important; }
+      .logo-text { color: #0d0d0d !important; }
+      footer { border-top-color: rgba(0,0,0,0.1) !important; }
+      footer a { color: rgba(0,0,0,0.35) !important; }
+      footer .sep { color: rgba(0,0,0,0.15) !important; }
+      .glow { background:
+        radial-gradient(60% 55% at 75% 10%, rgba(245,166,35,0.18), transparent 65%),
+        radial-gradient(45% 40% at 10% 80%, rgba(181,245,58,0.12), transparent 60%) !important; }
+    }
+
     .page {
       min-height: 100svh;
       display: flex;
