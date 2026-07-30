@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Únete a STRIDER — Tu ciudad. Tu territorio.</title>
+  <meta name="description" content="Te invitaron a unirte a STRIDER. Captura hexágonos, expande tu zona y domina tu ciudad.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Te invitan a STRIDER 🏃">
+  <meta property="og:description" content="Conquista tu ciudad corriendo. Captura hexágonos y domina tu zona.">
+  <meta property="og:url" content="https://strider.lat">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- iOS Universal Links: intenta abrir la app si está instalada -->
+  <meta name="apple-itunes-app" content="app-id=6776907250">
+
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: #0a0a0a;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glow background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(60% 55% at 60% 20%, rgba(181,245,58,0.12), transparent 65%),
+        radial-gradient(45% 40% at 20% 80%, rgba(245,166,35,0.08), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .logo {
+      font-family: 'Clash Display', -apple-system, sans-serif;
+      font-size: 42px;
+      font-weight: 600;
+      color: #B5F53A;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+
+    .tagline {
+      color: rgba(255,255,255,0.45);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      margin-bottom: 36px;
+    }
+
+    .invite-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .invite-label {
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .invite-code {
+      font-family: 'Clash Display', monospace;
+      font-size: 28px;
+      font-weight: 600;
+      color: #B5F53A;
+      letter-spacing: 4px;
+    }
+
+    .invite-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: #B5F53A;
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary:active { opacity: 0.85; }
+
+    .btn-secondary {
+      display: block;
+      color: rgba(255,255,255,0.4);
+      font-size: 14px;
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .features {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .feature {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px 10px;
+    }
+
+    .feature-icon { font-size: 22px; margin-bottom: 6px; }
+    .feature-text { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+    @media (prefers-color-scheme: light) {
+      html, body { background: #f0f0ec; color: #0a0a0a; }
+      .invite-box {
+        background: rgba(0,0,0,0.04);
+        border-color: rgba(0,0,0,0.1);
+      }
+      .invite-label { color: rgba(0,0,0,0.4); }
+      .invite-desc { color: rgba(0,0,0,0.45); }
+      .tagline { color: rgba(0,0,0,0.45); }
+      .btn-secondary { color: rgba(0,0,0,0.35); }
+      .feature { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+      .feature-text { color: rgba(0,0,0,0.45); }
+      body::before {
+        background:
+          radial-gradient(60% 55% at 60% 20%, rgba(181,245,58,0.15), transparent 65%),
+          radial-gradient(45% 40% at 20% 80%, rgba(245,166,35,0.10), transparent 60%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="logo">STRIDER</div>
+    <div class="tagline">CONQUISTA TU CIUDAD CORRIENDO</div>
+
+    <div id="invite-section" style="display:none">
+      <div class="invite-box">
+        <div class="invite-label">Tu código de invitación</div>
+        <div class="invite-code" id="code-display"></div>
+        <div class="invite-desc">Úsalo al registrarte para conectarse con quien te invitó</div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🏃</div>
+        <div class="feature-text">Corre y captura hexágonos</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-text">Expande tu zona en el mapa</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-text">Compite y gana premios reales</div>
+      </div>
+    </div>
+
+    <a class="btn-primary" id="btn-open" href="https://apps.apple.com/app/id6776907250">
+      Descargar STRIDER
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/id6776907250" id="btn-store">
+      Descargar en el App Store
+    </a>
+  </div>
+
+  <script>
+    // Extraer el código de la URL: /invite/Y6N2UB → "Y6N2UB"
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const code = parts[parts.length - 1] || '';
+
+    if (code && code.length > 2) {
+      document.getElementById('code-display').textContent = code.toUpperCase();
+      document.getElementById('invite-section').style.display = '';
+
+      // Intentar abrir la app con deep link
+      const deepLink = 'strider://invite/' + code;
+      const appStore = 'https://apps.apple.com/app/id6776907250';
+
+      const btnOpen = document.getElementById('btn-open');
+      btnOpen.textContent = 'Abrir en STRIDER';
+      btnOpen.href = deepLink;
+
+      // Si la app no está instalada, el deep link falla silenciosamente.
+      // Redirigir al App Store después de un timeout.
+      btnOpen.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = deepLink;
+        setTimeout(function() {
+          window.location.href = appStore;
+        }, 1500);
+      });
+
+      document.getElementById('btn-store').style.display = '';
+    } else {
+      // No hay código, solo mostrar descarga
+      document.getElementById('btn-open').textContent = 'Descargar STRIDER';
+      document.getElementById('btn-open').href = 'https://apps.apple.com/app/id6776907250';
+      document.getElementById('btn-store').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
