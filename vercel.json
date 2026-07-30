@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/invite/(.*)", "destination": "/invite/index.html" }
+  "redirects": [
+    { "source": "/invite/:code", "destination": "/invite?code=:code", "permanent": false }
   ]
 }

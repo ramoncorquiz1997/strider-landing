@@ -205,9 +205,9 @@
   </div>
 
   <script>
-    // Extraer el código de la URL: /invite/Y6N2UB → "Y6N2UB"
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    const code = parts[parts.length - 1] || '';
+    // El redirect de Vercel convierte /invite/Y6N2UB → /invite?code=Y6N2UB
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code') || '';
 
     if (code && code.length > 2) {
       document.getElementById('code-display').textContent = code.toUpperCase();
